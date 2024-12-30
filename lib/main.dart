@@ -1,7 +1,7 @@
-import 'package:chatgpt_app/provider/hatgpt_provider.dart';
-import 'package:chatgpt_app/views/home/views/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:chatgpt_app/provider/chatgpt_provider.dart';
+import 'package:chatgpt_app/views/home/views/home_page.dart';
 
 void main() {
   runApp(
@@ -28,7 +28,7 @@ class _ChatGptAppState extends State<ChatGptApp> {
       child: MaterialApp(
         theme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: const HomePage(),
       ),
     );
   }

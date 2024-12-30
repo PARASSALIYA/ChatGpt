@@ -6,15 +6,19 @@ class ChatGptProvider with ChangeNotifier {
   ChatGptHelper helper = ChatGptHelper();
   List<String> getList = [];
   List<String> sendList = [];
-  List<String> messageList = [];
   bool isRight = false;
-  String l = '';
+  String getText = '';
   ChatGptModel? model;
   String sendText = '';
-  void getApi() async {
+
+  Future<void> sendMsg() async {
     model = await helper.getChatGptResponse(sendText);
-    l = model!.candidates[0].content.parts[0].text;
-    getList.add(l);
+    getText = model!.candidates[0].content.parts[0].text;
+    getList.add(getText);
+    notifyListeners();
+  }
+
+  void addSendMsg() {
     sendList.add(sendText);
 
     notifyListeners();

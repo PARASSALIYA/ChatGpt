@@ -28,7 +28,6 @@ class ChatGptHelper {
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
       ChatGptModel model = ChatGptModel.mapToModel(data);
-      print(data);
       return model;
     }
     return null;
